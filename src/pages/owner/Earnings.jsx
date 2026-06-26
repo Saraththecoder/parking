@@ -149,7 +149,7 @@ const Earnings = () => {
       <Modal isOpen={withdrawOpen} onClose={() => setWithdrawOpen(false)} title="Withdraw Funds to Bank">
         <form onSubmit={handleWithdrawSubmit} className="space-y-4 text-left">
           <div className="bg-slate-50 p-4 rounded-xl border border-slate-150 text-xs font-semibold text-slate-700 flex items-center gap-3">
-            <BankIcon size={18} className="text-slate-500 shrink-0" />
+            <Landmark size={18} className="text-slate-500 shrink-0" />
             <div>
               <p className="text-slate-800 font-bold">HDFC Bank India</p>
               <p className="text-[10px] text-slate-450 mt-0.5">Account ending in •••• 1234</p>

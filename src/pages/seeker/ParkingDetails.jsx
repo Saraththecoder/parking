@@ -3,6 +3,7 @@ import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useApp } from '../../context/AppContext';
 import StarRating from '../../components/StarRating';
 import Modal from '../../components/Modal';
+import MapPlaceholder from '../../components/MapPlaceholder';
 import { Shield, ShieldAlert, Award, Clock, Sparkles, Check, ChevronRight, MapPin, Calendar, User, Eye, ArrowLeft, ArrowUpRight } from 'lucide-react';
 import toast from 'react-hot-toast';
 
