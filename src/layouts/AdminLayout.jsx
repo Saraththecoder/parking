@@ -1,0 +1,105 @@
+import React, { useState } from 'react';
+import { Outlet, useLocation, Link } from 'react-router-dom';
+import Sidebar from '../components/Sidebar';
+import { Menu, ChevronRight, Home, Shield } from 'lucide-react';
+import { motion, AnimatePresence } from 'framer-motion';
+
+const AdminLayout = () => {
+  const [mobileSidebarOpen, setMobileSidebarOpen] = useState(false);
+  const location = useLocation();
+
+  const getBreadcrumbs = () => {
+    const paths = location.pathname.split('/').filter(p => p);
+    return paths.map((path, idx) => {
+      const routeTo = `/${paths.slice(0, idx + 1).join('/')}`;
+      const isLast = idx === paths.length - 1;
+      const formattedName = path.charAt(0).toUpperCase() + path.slice(1).replace('-', ' ');
+      
+      return (
+        <span key={routeTo} className="flex items-center">
+          <ChevronRight size={14} className="text-slate-300 mx-1.5" />
+          {isLast ? (
+            <span className="text-slate-800 font-semibold text-xs">{formattedName}</span>
+          ) : (
+            <Link to={routeTo} className="text-slate-500 hover:text-slate-700 text-xs transition-colors">
+              {formattedName}
+            </Link>
+          )}
+        </span>
+      );
+    });
+  };
+
+  return (
+    <div className="min-h-screen bg-slate-50 flex">
+      {/* Desktop Sidebar */}
+      <div className="hidden md:block">
+        <Sidebar type="admin" />
+      </div>
+
+      {/* Mobile Sidebar */}
+      <AnimatePresence>
+        {mobileSidebarOpen && (
+          <div className="fixed inset-0 z-50 md:hidden flex">
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              onClick={() => setMobileSidebarOpen(false)}
+              className="fixed inset-0 bg-slate-900/50 backdrop-blur-sm"
+            />
+            <motion.div
+              initial={{ x: '-100%' }}
+              animate={{ x: 0 }}
+              exit={{ x: '-100%' }}
+              transition={{ type: 'tween', duration: 0.3 }}
+              className="relative w-64 h-full flex-shrink-0"
+            >
+              <Sidebar type="admin" />
+            </motion.div>
+          </div>
+        )}
+      </AnimatePresence>
+
+      {/* Admin Content Area */}
+      <div className="flex-1 flex flex-col md:pl-64 min-w-0">
+        <header className="h-16 bg-white border-b border-slate-200 flex items-center justify-between px-4 sm:px-6 lg:px-8 sticky top-0 z-20">
+          <div className="flex items-center gap-3">
+            <button
+              onClick={() => setMobileSidebarOpen(true)}
+              className="md:hidden p-2 hover:bg-slate-50 border border-slate-250 rounded-lg text-slate-500"
+            >
+              <Menu size={20} />
+            </button>
+            <div className="hidden sm:flex items-center text-xs text-slate-400 font-medium select-none">
+              <Link to="/admin/dashboard" className="text-slate-500 hover:text-slate-700 flex items-center transition-colors">
+                <Home size={14} />
+              </Link>
+              {getBreadcrumbs()}
+            </div>
+          </div>
+
+          <div className="flex items-center gap-4">
+            <span className="bg-amber-50 text-amber-700 border border-amber-200 px-3 py-1 rounded-full text-[10px] font-extrabold uppercase tracking-wider flex items-center gap-1.5 shadow-sm">
+              <Shield size={12} className="text-amber-600" />
+              Platform Administrator
+            </span>
+          </div>
+        </header>
+
+        <main className="flex-grow p-4 sm:p-6 lg:p-8 overflow-y-auto">
+          <motion.div
+            key={location.pathname}
+            initial={{ opacity: 0, y: 8 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.25 }}
+          >
+            <Outlet />
+          </motion.div>
+        </main>
+      </div>
+    </div>
+  );
+};
+
+export default AdminLayout;
