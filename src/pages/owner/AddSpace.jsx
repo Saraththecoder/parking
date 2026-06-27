@@ -26,7 +26,7 @@ const AddSpace = () => {
     "Only registered vehicles allowed",
     "Maintain low speed on ramp"
   ]);
-  const [imagePlaceholder, setImagePlaceholder] = useState('https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800');
+  const [imagePlaceholder, setImagePlaceholder] = useState('/images/parking/cellar_parking_ev.png');
 
   const handleAmenityToggle = (amenity) => {
     if (selectedAmenities.includes(amenity)) {
@@ -312,7 +312,7 @@ const AddSpace = () => {
                 <button
                   type="button"
                   onClick={() => {
-                    setImagePlaceholder("https://images.unsplash.com/photo-1506521788701-1e13a4e83f2a?w=800");
+                    setImagePlaceholder("/images/parking/gated_residential.png");
                     toast.success("Loaded clean basement photo!");
                   }}
                   className="px-3 py-2 bg-slate-100 hover:bg-slate-200 border border-slate-250 text-slate-700 text-xs font-bold rounded-xl"

@@ -108,16 +108,16 @@ const ParkingDetails = () => {
           {/* Grid blocks */}
           <div className="hidden md:grid grid-cols-2 col-span-2 gap-2 h-[350px]">
             <div className="bg-slate-150 overflow-hidden cursor-pointer" onClick={() => setGalleryOpen(true)}>
-              <img src={space.images[1] || space.images[0]} alt="" className="w-full h-full object-cover hover:scale-102 transition-transform" />
+              <img src={space.images[1] || "/images/parking/cellar_parking_ev.png"} alt="" className="w-full h-full object-cover hover:scale-102 transition-transform" />
             </div>
             <div className="bg-slate-150 overflow-hidden cursor-pointer" onClick={() => setGalleryOpen(true)}>
-              <img src="https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=400" alt="" className="w-full h-full object-cover hover:scale-102 transition-transform" />
+              <img src={space.images[2] || "/images/parking/driveway_villa.png"} alt="" className="w-full h-full object-cover hover:scale-102 transition-transform" />
             </div>
             <div className="bg-slate-150 overflow-hidden cursor-pointer" onClick={() => setGalleryOpen(true)}>
-              <img src="https://images.unsplash.com/photo-1590674488059-d8e7e1e695d7?w=400" alt="" className="w-full h-full object-cover hover:scale-102 transition-transform" />
+              <img src={space.images[3] || "/images/parking/gated_residential.png"} alt="" className="w-full h-full object-cover hover:scale-102 transition-transform" />
             </div>
             <div className="bg-slate-150 overflow-hidden cursor-pointer relative" onClick={() => setGalleryOpen(true)}>
-              <img src="https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?w=400" alt="" className="w-full h-full object-cover blur-[1px] hover:blur-0 transition-all" />
+              <img src={space.images[4] || "/images/parking/open_complex.png"} alt="" className="w-full h-full object-cover blur-[1px] hover:blur-0 transition-all" />
               <div className="absolute inset-0 bg-slate-900/40 flex items-center justify-center text-white text-xs font-bold gap-1.5 select-none">
                 <Eye size={16} />
                 <span>Show all photos</span>
@@ -418,8 +418,9 @@ const ParkingDetails = () => {
           {space.images.map((img, idx) => (
             <img key={idx} src={img} alt="" className="w-full rounded-xl object-cover aspect-video" />
           ))}
-          <img src="https://images.unsplash.com/photo-1590674488059-d8e7e1e695d7?w=800" alt="" className="w-full rounded-xl object-cover aspect-video" />
-          <img src="https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?w=800" alt="" className="w-full rounded-xl object-cover aspect-video" />
+          {!space.images[2] && <img src="/images/parking/driveway_villa.png" alt="" className="w-full rounded-xl object-cover aspect-video" />}
+          {!space.images[3] && <img src="/images/parking/gated_residential.png" alt="" className="w-full rounded-xl object-cover aspect-video" />}
+          {!space.images[4] && <img src="/images/parking/open_complex.png" alt="" className="w-full rounded-xl object-cover aspect-video" />}
         </div>
       </Modal>
 

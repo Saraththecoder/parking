@@ -207,7 +207,7 @@ const Landing = () => {
           {/* Card 1 */}
           <div className="group relative h-96 rounded-2xl overflow-hidden shadow-soft border border-slate-200">
             <img
-              src="https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600"
+              src="/images/parking/gated_residential.png"
               alt="Residential"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
@@ -226,7 +226,7 @@ const Landing = () => {
           {/* Card 2 */}
           <div className="group relative h-96 rounded-2xl overflow-hidden shadow-soft border border-slate-200">
             <img
-              src="https://images.unsplash.com/photo-1506521788701-1e13a4e83f2a?w=600"
+              src="/images/parking/commercial_basement.png"
               alt="Commercial"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />
@@ -245,7 +245,7 @@ const Landing = () => {
           {/* Card 3 */}
           <div className="group relative h-96 rounded-2xl overflow-hidden shadow-soft border border-slate-200">
             <img
-              src="https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?w=600"
+              src="/images/parking/cellar_parking_ev.png"
               alt="Monthly"
               className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
             />

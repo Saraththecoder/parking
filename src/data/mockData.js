@@ -83,8 +83,8 @@ export const MOCK_SPACES = [
     vehicleTypes: ["Hatchback / Sedan", "2-Wheeler"],
     amenities: ["CCTV Surveillance", "Covered Parking", "24/7 Security"],
     images: [
-      "https://images.unsplash.com/photo-1506521788701-1e13a4e83f2a?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1590674899484-d5640e854abe?w=800&auto=format&fit=crop&q=80"
+      "/images/parking/gated_residential.png",
+      "/images/parking/cellar_parking_ev.png"
     ],
     lat: 35, // local grid %
     lng: 40,
@@ -115,8 +115,8 @@ export const MOCK_SPACES = [
     vehicleTypes: ["Hatchback / Sedan", "SUV / Luxury", "2-Wheeler"],
     amenities: ["CCTV Surveillance", "Covered Parking", "EV Charging", "24/7 Security"],
     images: [
-      "https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1590674488059-d8e7e1e695d7?w=800&auto=format&fit=crop&q=80"
+      "/images/parking/cellar_parking_ev.png",
+      "/images/parking/commercial_basement.png"
     ],
     lat: 60,
     lng: 75,
@@ -147,7 +147,8 @@ export const MOCK_SPACES = [
     vehicleTypes: ["Hatchback / Sedan", "2-Wheeler"],
     amenities: ["Gated Entry", "Covered Parking"],
     images: [
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop&q=80"
+      "/images/parking/driveway_villa.png",
+      "/images/parking/gated_residential.png"
     ],
     lat: 25,
     lng: 30,
@@ -178,7 +179,8 @@ export const MOCK_SPACES = [
     vehicleTypes: ["Hatchback / Sedan", "SUV / Luxury", "2-Wheeler"],
     amenities: ["CCTV Surveillance", "24/7 Security", "Gated Entry"],
     images: [
-      "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=800&auto=format&fit=crop&q=80"
+      "/images/parking/open_complex.png",
+      "/images/parking/driveway_villa.png"
     ],
     lat: 40,
     lng: 25,
@@ -208,8 +210,8 @@ export const MOCK_SPACES = [
     vehicleTypes: ["Hatchback / Sedan", "SUV / Luxury"],
     amenities: ["CCTV Surveillance", "Covered Parking", "EV Charging", "24/7 Security"],
     images: [
-      "https://images.unsplash.com/photo-1506521788701-1e13a4e83f2a?w=800&auto=format&fit=crop&q=80",
-      "https://images.unsplash.com/photo-1573348722427-f1d6819fdf98?w=800&auto=format&fit=crop&q=80"
+      "/images/parking/commercial_basement.png",
+      "/images/parking/cellar_parking_ev.png"
     ],
     lat: 55,
     lng: 45,
@@ -240,7 +242,8 @@ export const MOCK_SPACES = [
     vehicleTypes: ["Hatchback / Sedan", "2-Wheeler"],
     amenities: ["Covered Parking", "24/7 Security", "Gated Entry"],
     images: [
-      "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&auto=format&fit=crop&q=80"
+      "/images/parking/open_complex.png",
+      "/images/parking/gated_residential.png"
     ],
     lat: 45,
     lng: 60,
